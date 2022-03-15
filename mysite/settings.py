@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'taggit'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES = [BASE_DIR , 'static']
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sanskarparida2003@gmail.com'
+EMAIL_HOST_PASSWORD = 'babundlegnd'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
