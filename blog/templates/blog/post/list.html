@@ -1,11 +1,12 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 {% block title %}My Blog{% endblock %}
 {% block content %}
-<h1>My Blog</h1>
+<h1 style="color: rgb(170, 89, 42);"><u>My Blog</u></h1>
 <!-- <hr border-top: 17px solid #bbb;> -->
-{% if tag %}
+<!-- {% if tag %}
  <h2>Posts tagged with "{{ tag.name }}"</h2>
-{% endif %}
+{% endif %} -->
 {% for post in posts %}
 <h2>
 <a href="{{ post.get_absolute_url }}">
@@ -26,7 +27,8 @@
 <p class="date">
 Published {{ post.publish }} by {{ post.author }}
 </p>
-{{ post.body|truncatewords:30|linebreaks }}
+<!-- {{ post.body|truncatewords:30|linebreaks }} -->
+{{ post.body|markdown|truncatewords_html:30 }}
 {% endfor %}
 {% include "blog/pagination.html" with page=posts %}
 

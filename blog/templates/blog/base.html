@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,7 @@
 
 
 </head>
-<body style="background-color: beige;">
-    <body>
+    <body style="background-color: rgb(232, 241, 234);">
         <div id="content" style="width: 80%; float:left;">
            
         {% block content %}
@@ -22,12 +22,15 @@
         {% endblock %}
         
         </div>
-        <div id="sidebar" style="width: 20%; float:right; background-color:rgb(91, 231, 98);">
+        <div id="sidebar" style="width: 20%; float:right; background-color:rgb(106, 230, 133);margin-top: 15px;">
             <div>
+
                 <h2 class="text-center">My blog</h2>
-                <p style="padding: 10px;">This is my blog. I've written posts so far.</p>
+                <p style="padding: 10px;">This is my blog. I've written {% total_posts %} posts so far.</p>
+                <h3 style="margin-left: 10px;">Latest posts</h3>
+                {% show_latest_posts 3 %}
             
             </div>
-        <div>
-</body>
+        </div>
+    </body>
 </html>
