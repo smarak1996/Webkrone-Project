@@ -4,9 +4,9 @@
 {% block content %}
 <h1 style="color: rgb(170, 89, 42);"><u>My Blog</u></h1>
 <!-- <hr border-top: 17px solid #bbb;> -->
-<!-- {% if tag %}
- <h2>Posts tagged with "{{ tag.name }}"</h2>
-{% endif %} -->
+{% if tag %}
+ <h2>Posts tagged with {{ tag.name }}</h2>
+{% endif %}
 {% for post in posts %}
 <h2>
 <a href="{{ post.get_absolute_url }}">
